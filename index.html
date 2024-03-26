@@ -175,15 +175,21 @@
 
         <!-- Experiments / Results Section -->
         <h2>Experiments / Results</h2>
-        <p>We conducted experiments using the Common Objects in Context (COCO) dataset to validate our approach. While our initial results show promising outcomes in preserving context and blending images, further experimentation and optimization are required to achieve desired performance.</p>
+        <p>For our experiments, we conducted text-to-image synthesis using both a baseline stable diffusion model and our masked model, with the aim of generating visually coherent images from textual prompts. The baseline model was configured with hyperparameters optimized for stability and quality, including a configuration scale of 8, a sampler of "ddpm," 50 inference steps, a seed value of 42, and a diffusion strength of 0.9.
+
+            We evaluated our models across various prompts, ranging from simple descriptions like "Dog Sitting" to more complex scenarios such as "A Lion with Sunglasses." Each experiment involved synthesizing images based on the prompt using both the baseline model and our masked model. Additionally, we utilized an image of a "Dog Sitting in Grass" as a reference image to provide context for the synthesis process.
+            
+            In our results, we observed the effectiveness of our masked model in preserving context and blending images compared to the baseline model. The structured integration of dynamic masking techniques with diffusion models allowed for enhanced accuracy in drawing subjects from input text onto images, ensuring seamless blending with the original image's visual features and background. Through meticulous experimentation and optimization, we aimed to validate the effectiveness of our approach in improving sample quality and providing greater user control in the generation process.
+            Some of the qualitative results are shown below.
+        </p>
+
         <div class="output">
-            <!-- Insert qualitative result (e.g., a visual output of your system on an example image) here -->
             <table>
                 <tr>
                     <th>Prompt</th>
                     <th>Reference Image</th>
-                    <th>Baseline Image</th>
-                    <th>Our Model Output</th>
+                    <th>Baseline Model: Stable Diffusion</th>
+                    <th>Our Model</th>
                 </tr>
                 <tr>
                     <td>A dog with Sunglasses</td>
@@ -217,15 +223,15 @@
                 <th>Anticipated Completion Date</th>
             </tr>
             <tr>
-                <td>Refine masking technique</td>
+                <td>Refine and Improve masking technique to incorporate complex scenerios</td>
                 <td>April 10, 2024</td>
             </tr>
             <tr>
-                <td>Explore additional datasets</td>
+                <td>Ablation Studies to identify better hyperparameters</td>
                 <td>April 15, 2024</td>
             </tr>
             <tr>
-                <td>Conduct experiments</td>
+                <td>Conduct further experiments</td>
                 <td>April 20, 2024</td>
             </tr>
         </table>
