@@ -194,11 +194,11 @@
             <div class="output-text">
                 <p><b> + Prompt: "A dog with Sunglasses" = </b></p>
             </div>
-            <img src="./static/dog-sunglasses-baseline.png" alt="Baseline Dog with Sunglasses" class="output-image">
+            <img src="./static/dog-sunglasses-baseline.png" alt="Baseline Dog with Sunglasses" class="output-image" style="max-height: 13em;">
         </div>
         <p style="text-align: center; margin-bottom: 2em;">Figure 1: Image generated from stable diffusion model for the prompt "A dog with Sunglasses"</p>
 
-        The model generates the image of a dog with sunglasses but the background is not coherent with the reference image. Our model will mask the less attended regions in the image and replace them with the original image to preserve the context and orginal image features. This will result in a more coherent image with the prompt and reference image.
+        The model generates the image of a dog with sunglasses but the background is <b>not coherent with the reference image</b> (in above example see the background is very different from the reference image). Our model will mask the less attended regions in the image and replace them with the original image to preserve the context and orginal image features. This will result in a more coherent image with the prompt and reference image.
         </div>
 
         <h2>Related Works</h2>
