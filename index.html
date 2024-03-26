@@ -218,7 +218,12 @@
         </div>
         <!-- Methods/Approach Section -->
         <h2>Methods/Approach</h2>
+        <div class="related-works">
         <p>Our approach involves integrating dynamic masking techniques with diffusion models for text-to-image synthesis. We leverage cumulative attention scores derived from the text prompt to mask specific areas of the image during the synthesis process. This allows us to preserve contextual information while generating visually coherent images.</p>
+        <p> More specifically for our approach, we utilize an image generation pipeline that references the following parameters. A prompt to define the subject details of the output and an input image used to create the background. The constants for noise strength, classifier-free guidance scale, and inference step count all play a role in determining the quality and level of presence the background will have in the resulting image. A seed specifier is also used to allow a result to be replicated exactly.
+            To construct the desired image, the prompt must first be analyzed. For this, spacy, a language processing library, is used to extract words correlating with the prompt's subject matter. Next, the input image is encoded and its latents with and without noise at the specified strength are calculated for certain timesteps. Now during the denoising step, for the selected timestamp, we calculate the cumulative attention map for the various subjects present in the conditional prompt. Based on these attention values, we construct our dynamic mask which identifies whether a point in the latent vector will be swapped with the noised original latent vector at that timestep. We repeat this process for all the selected timesteps. 
+        </p>
+        </div>
         <!-- Architecture Diagram -->
         <div class="architecture-diagram">
             <img src="./static/Stable-diffusion.png" alt="Architecture Diagram" style="max-width: 70%; height: auto; margin-top: 20px;">
