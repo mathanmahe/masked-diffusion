@@ -138,6 +138,28 @@
             max-width: 200px; /* Adjust the maximum width as needed */
             height: auto;
         }
+
+        .architecture-diagram {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .output-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2em;
+            margin-top: 2em;
+        }
+        .output-image {
+            max-width: 300px;
+            height: auto;
+            margin: 0 10px;
+        }
+        .output-text {
+            font-size: 18px;
+            margin: 0 10px;
+        }
+
     </style>
 </head>
 
@@ -161,7 +183,23 @@
 
         <!-- Problem Statement Section -->
         <h2>Problem Statement</h2>
+        <div class="related-works">
         <p>We aim to develop an advanced text-to-image synthesis method by seamlessly integrating a dynamic masking technique with diffusion models. This approach seeks to enhance the accuracy of drawing subjects from input text onto an image while ensuring their seamless blending with the original image's visual features and background.</p>
+        <p>With current text-to-image models such Stable Diffusion, images are generated entirely based on a specified prompt. While this is an amazing capability by itself, the functionality could be extended to allow further control based on supplied images, such as correlating a prompt with a desired background. </p>
+        <p>As such, we aim to develop an advanced text-to-image synthesis method by seamlessly integrating a dynamic masking technique with diffusion models. This approach seeks to enhance the accuracy of drawing subjects from input text onto an image while ensuring their seamless blending with the original image's visual features and background.</p>
+
+        For example consider the image generated from stable diffusion model for the prompt "A dog with Sunglasses" when hyperparameter determining noising strength is set to 0.9 for stable diffusion model. 
+        <div class="output-container">
+            <img src="./static/reference.jpeg" alt="Reference Dog with Sunglasses" class="output-image"> 
+            <div class="output-text">
+                <p><b> + Prompt: "A dog with Sunglasses" = </b></p>
+            </div>
+            <img src="./static/dog-sunglasses-baseline.png" alt="Baseline Dog with Sunglasses" class="output-image">
+        </div>
+        <p style="text-align: center; margin-bottom: 2em;">Figure 1: Image generated from stable diffusion model for the prompt "A dog with Sunglasses"</p>
+
+        The model generates the image of a dog with sunglasses but the background is not coherent with the reference image. Our model will mask the less attended regions in the image and replace them with the original image to preserve the context and orginal image features. This will result in a more coherent image with the prompt and reference image.
+        </div>
 
         <h2>Related Works</h2>
         <div class="related-works">
@@ -172,13 +210,16 @@
         <!-- Methods/Approach Section -->
         <h2>Methods/Approach</h2>
         <p>Our approach involves integrating dynamic masking techniques with diffusion models for text-to-image synthesis. We leverage cumulative attention scores derived from the text prompt to mask specific areas of the image during the synthesis process. This allows us to preserve contextual information while generating visually coherent images.</p>
-
+        <!-- Architecture Diagram -->
+        <div class="architecture-diagram">
+            <img src="./static/Stable-diffusion.png" alt="Architecture Diagram" style="max-width: 70%; height: auto; margin-top: 20px;">
+            <p>Figure 2: Architecture Diagram of Text-to-Image Synthesis with Dynamic Masking</p>
+        </div>    
         <!-- Experiments / Results Section -->
         <h2>Experiments / Results</h2>
-        <p>For our experiments, we conducted text-to-image synthesis using both a baseline stable diffusion model and our masked model, with the aim of generating visually coherent images from textual prompts. The baseline model was configured with hyperparameters optimized for stability and quality, including a configuration scale of 8, a sampler of "ddpm," 50 inference steps, a seed value of 42, and a diffusion strength of 0.9.
-
+        <p>For our experiments, we conducted text-to-image synthesis using both a baseline stable diffusion model and our masked model, with the aim of generating visually coherent images from textual prompts. The baseline model was configured with hyperparameters optimized for stability and quality, including a configuration scale of 8, a sampler of "ddpm," 50 inference steps, a seed value of 42, and a diffusion strength of 0.9. Among 50 timestamps, we selected the 5th, 10th and 15th timestamp for dynamic mask calculation and superimposed it over the predicted latent vector for those selected timestamps. 
+            Dynamic map calculation was performed by calculating the attention scores for each word in the prompt and then normalizing the scores to obtain the mask. The threshold for the mask was set to 0.0002 and the regions with attention scores above the threshold were masked. In short we identify the less attended regions in the image and replace them with the orginal image to preserve the context.
             We evaluated our models across various prompts, ranging from simple descriptions like "Dog Sitting" to more complex scenarios such as "A Lion with Sunglasses." Each experiment involved synthesizing images based on the prompt using both the baseline model and our masked model. Additionally, we utilized an image of a "Dog Sitting in Grass" as a reference image to provide context for the synthesis process.
-            
             In our results, we observed the effectiveness of our masked model in preserving context and blending images compared to the baseline model. The structured integration of dynamic masking techniques with diffusion models allowed for enhanced accuracy in drawing subjects from input text onto images, ensuring seamless blending with the original image's visual features and background. Through meticulous experimentation and optimization, we aimed to validate the effectiveness of our approach in improving sample quality and providing greater user control in the generation process.
             Some of the qualitative results are shown below.
         </p>
