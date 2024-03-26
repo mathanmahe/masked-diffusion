@@ -134,6 +134,10 @@
             width: 100%;
         }
 
+        .experiment-image {
+            max-width: 200px; /* Adjust the maximum width as needed */
+            height: auto;
+        }
     </style>
 </head>
 
@@ -147,7 +151,7 @@
                 Kshitij Pathania, Brandon Colbert, Mathan Mahendran
             </div>
             <!-- Replace the href with your repository link -->
-            <a href="https://github.com/CS-6476/Masked-Diffusion-Image-Synthesis" target="_blank" class="github-btn">GitHub Repository</a>
+            <a href="https://github.gatech.edu/CS-6476-Diffusion-Model/Masked-Diffusion-Image-Synthesis" target="_blank" class="github-btn">GitHub Repository</a>
         </div>
     </nav>
     
@@ -174,6 +178,33 @@
         <p>We conducted experiments using the Common Objects in Context (COCO) dataset to validate our approach. While our initial results show promising outcomes in preserving context and blending images, further experimentation and optimization are required to achieve desired performance.</p>
         <div class="output">
             <!-- Insert qualitative result (e.g., a visual output of your system on an example image) here -->
+            <table>
+                <tr>
+                    <th>Prompt</th>
+                    <th>Reference Image</th>
+                    <th>Baseline Image</th>
+                    <th>Our Model Output</th>
+                </tr>
+                <tr>
+                    <td>A dog with Sunglasses</td>
+                    <td><img src="./static/reference.jpeg" alt="Reference Dog with Sunglasses" class="experiment-image"></td>
+                    <td><img src="./static/dog-sunglasses-baseline.png" alt="Baseline Dog with Sunglasses" class="experiment-image"></td>
+                    <td><img src="./static/dog-sunglasses-our.png" alt="Our Model Dog with Sunglasses" class="experiment-image"></td>
+                </tr>
+                <tr>
+                    <td>A lion with Sunglasses</td>
+                    <td><img src="./static/reference.jpeg" alt="Reference Dog with Sunglasses" class="experiment-image"></td>
+                    <td><img src="./static/lion-sunglasses-baseline.png" alt="Baseline Dog with Sunglasses" class="experiment-image"></td>
+                    <td><img src="./static/lion-sunglasses-our.png" alt="Our Model Dog with Sunglasses" class="experiment-image"></td>
+                </tr>
+                <tr>
+                    <td>Horse running.</td>
+                    <td><img src="./static/reference.jpeg" alt="Reference Dog with Sunglasses" class="experiment-image"></td>
+                    <td><img src="./static/horse-running-baseline.png" alt="Baseline Dog with Sunglasses" class="experiment-image"></td>
+                    <td><img src="./static/horse-running-our.png" alt="Our Model Dog with Sunglasses" class="experiment-image"></td>
+                </tr>
+            </table>
+            
         </div>
 
         <!-- What’s Next Section -->
