@@ -174,6 +174,181 @@ const scoresDictionary = {
     
   };
 
+const scoresDictionary2 = {
+    "000000000139.jpg": {
+        "A dog with Sunglasses": {
+            "FID": 4.141053199768066,
+            "PSNR": 12.791899703052206,
+            "SSIM": 0.4480528506113557
+        },
+        "A lion with Sunglasses": {
+            "FID": 1.7679767608642578,
+            "PSNR": 13.059059980986373,
+            "SSIM": 0.3789923834386197
+        },
+        "Horse running": {
+            "FID": 1.9429723024368286,
+            "PSNR": 14.023187582886445,
+            "SSIM": 0.40185512212662505
+        }
+    },
+    "000000000285.jpg": {
+        "A dog with Sunglasses": {
+            "FID": 17.29300308227539,
+            "PSNR": 11.516770506166974,
+            "SSIM": 0.16123662630800126
+        },
+        "A lion with Sunglasses": {
+            "FID": 3.8911261558532715,
+            "PSNR": 10.18464445580107,
+            "SSIM": 0.13202211571347885
+        },
+        "Horse running": {
+            "FID": 14.05180835723877,
+            "PSNR": 11.571812064738811,
+            "SSIM": 0.1500018521820972
+        }
+    },
+    "000000000632.jpg": {
+        "A dog with Sunglasses": {
+            "FID": 21.401687622070312,
+            "PSNR": 12.471542307104462,
+            "SSIM": 0.21465839788923405
+        },
+        "A lion with Sunglasses": {
+            "FID": 3.9509153366088867,
+            "PSNR": 11.615917665186617,
+            "SSIM": 0.15896696211058706
+        },
+        "Horse running": {
+            "FID": 5.021905899047852,
+            "PSNR": 14.17809888679204,
+            "SSIM": 0.18687446460139576
+        }
+    },
+    "000000000724.jpg": {
+        "A dog with Sunglasses": {
+            "FID": 6.925352573394775,
+            "PSNR": 11.8576121171602,
+            "SSIM": 0.30830972644439925
+        },
+        "A lion with Sunglasses": {
+            "FID": 4.1884260177612305,
+            "PSNR": 10.904820799115251,
+            "SSIM": 0.2322671403883068
+        },
+        "Horse running": {
+            "FID": 7.819611549377441,
+            "PSNR": 12.855094032583235,
+            "SSIM": 0.2821068521009639
+        }
+    },
+    "000000000776.jpg": {
+        "A dog with Sunglasses": {
+            "FID": 13.468216896057129,
+            "PSNR": 12.153709181681995,
+            "SSIM": 0.14580327412669503
+        },
+        "A lion with Sunglasses": {
+            "FID": 4.066197872161865,
+            "PSNR": 10.68958165096926,
+            "SSIM": 0.08653738323241493
+        },
+        "Horse running": {
+            "FID": 18.02826690673828,
+            "PSNR": 13.374714567400122,
+            "SSIM": 0.15457555316417673
+        }
+    },
+    "000000000785.jpg": {
+        "A dog with Sunglasses": {
+            "FID": 1.1320439577102661,
+            "PSNR": 12.240508120497658,
+            "SSIM": 0.47232078534475114
+        },
+        "A lion with Sunglasses": {
+            "FID": 5.9632673263549805,
+            "PSNR": 11.99228152924863,
+            "SSIM": 0.394093023164458
+        },
+        "Horse running": {
+            "FID": 0.9089305400848389,
+            "PSNR": 14.046687399363563,
+            "SSIM": 0.5136524466002762
+        }
+    },
+    "000000000802.jpg": {
+        "A dog with Sunglasses": {
+            "FID": 2.6795473098754883,
+            "PSNR": 13.760794280721553,
+            "SSIM": 0.45065246658794117
+        },
+        "A lion with Sunglasses": {
+            "FID": 10.287025451660156,
+            "PSNR": 12.618751380358473,
+            "SSIM": 0.3236640584292137
+        },
+        "Horse running": {
+            "FID": 8.41752815246582,
+            "PSNR": 13.069200584295404,
+            "SSIM": 0.3782796730195102
+        }
+    },
+    "000000000872.jpg": {
+        "A dog with Sunglasses": {
+            "FID": 4.315158843994141,
+            "PSNR": 12.320187582107742,
+            "SSIM": 0.19823045584346563
+        },
+        "A lion with Sunglasses": {
+            "FID": 4.872196674346924,
+            "PSNR": 11.58782337283652,
+            "SSIM": 0.1487502384160304
+        },
+        "Horse running": {
+            "FID": 12.548315048217773,
+            "PSNR": 12.688183134402271,
+            "SSIM": 0.19571345639637108
+        }
+    },
+    "000000000885.jpg": {
+        "A dog with Sunglasses": {
+            "FID": 1.41489577293396,
+            "PSNR": 13.741207274211336,
+            "SSIM": 0.5069141360262441
+        },
+        "A lion with Sunglasses": {
+            "FID": 3.6550731658935547,
+            "PSNR": 14.434685774005338,
+            "SSIM": 0.44781573639590344
+        },
+        "Horse running": {
+            "FID": 1.4358489513397217,
+            "PSNR":
+
+ 15.440831601557555,
+            "SSIM": 0.5239307048489867
+        }
+    },
+    "000000001000.jpg": {
+        "A dog with Sunglasses": {
+            "FID": 29.7850284576416,
+            "PSNR": 10.790966425534466,
+            "SSIM": 0.17578478489661806
+        },
+        "A lion with Sunglasses": {
+            "FID": 8.854628562927246,
+            "PSNR": 11.47808012030435,
+            "SSIM": 0.14476439053752319
+        },
+        "Horse running": {
+            "FID": 11.888341903686523,
+            "PSNR": 11.081424721959095,
+            "SSIM": 0.16587790863574475
+        }
+    }
+};
+
 const baseImageIds = ["000000000139.jpg","000000000285.jpg","000000000632.jpg","000000000724.jpg",
 "000000000776.jpg","000000000785.jpg","000000000802.jpg","000000000872.jpg","000000000885.jpg","000000001000.jpg"]
 
@@ -187,7 +362,7 @@ const baselineGenPath = baseImagePath + "generated_images/";
 // Function to generate image cell HTML
 function generateImageCell(imageId, prompt, isStable) {
     const imagePath = (isStable ? stableGenPath : baselineGenPath) + imageId + "_" + prompt.replace(/ /g, '_') + ".jpg";
-    const scores = scoresDictionary[imageId];
+    const scores = (isStable ? scoresDictionary[imageId] :scoresDictionary2[imageId] );
     console.log(imageId)
     console.log(imagePath)
     console.log(scoresDictionary)
@@ -205,60 +380,98 @@ function generateImageCell(imageId, prompt, isStable) {
     </div>`;
 }
 
-// Function to build the table
-// function buildTable() {
-//   let tableHTML = '<div class="image-table">';
 
-//   baseImageIds.forEach(imageId => {
-//     tableHTML += '<div class="image-column">';
-//     tableHTML += `<div class="prompt-title">Base Image</div>`;
-//     tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
-//     prompts.forEach(prompt => {
-//       // Stable model images
-//       tableHTML += generateImageCell(imageId, prompt, true);
-//       // Baseline model images
-//     //   tableHTML += generateImageCell(imageId, prompt, false);
+
+// function buildTable() {
+//     let tableHTML = '<div class="image-table">';
+
+//     // Header row for prompts
+//     tableHTML += '<div class="image-row header">';
+//     prompts.forEach(prompt => { // Include the base image as one of the headers
+//       tableHTML += `<div class="prompt-title">${prompt}</div>`;
 //     });
 //     tableHTML += '</div>';
-//   });
+  
+//     // Rows for images
+//     baseImageIds.forEach(imageId => {
+//       tableHTML += '<div class="image-row">';
+      
+//       // Cells for each prompt, including the base image as the first prompt
+//       [imageId, ...prompts].forEach((prompt, index) => {
+//         tableHTML += '<div class="image-cell">';
+//         if (index === 0) {
+//           // Base image
+//           tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
+//         } else {
+//           // Generated images
+//           tableHTML += generateImageCell(imageId, prompt, true); // Assuming you always want stable images
+//         }
+//         tableHTML += '</div>';
+//       });
+  
+//       tableHTML += '</div>'; // Close image row
+//     });
+  
+//     tableHTML += '</div>'; // Close image table
+//     document.getElementById('imageTable').innerHTML = tableHTML;
+//   }
 
-//   tableHTML += '</div>';
-//   document.getElementById('imageTable').innerHTML = tableHTML;
-// }
+// // Call buildTable on page load
+// window.onload = buildTable;
 
 function buildTable() {
-    let tableHTML = '<div class="image-table">';
-
+    let stableTableHTML = '<div class="image-table">';
+    let baselineTableHTML = '<div class="image-table">';
+  
     // Header row for prompts
-    tableHTML += '<div class="image-row header">';
-    prompts.forEach(prompt => { // Include the base image as one of the headers
-      tableHTML += `<div class="prompt-title">${prompt}</div>`;
-    });
-    tableHTML += '</div>';
+    const headerRowHTML = '<div class="image-row header">' +
+      '<div class="prompt-title">Base Image</div>' +
+      prompts.map(prompt => `<div class="prompt-title">${prompt}</div>`).join('') +
+      '</div>';
+  
+    // Add the header row to both stable and baseline tables
+    stableTableHTML += headerRowHTML;
+    baselineTableHTML += headerRowHTML;
   
     // Rows for images
     baseImageIds.forEach(imageId => {
-      tableHTML += '<div class="image-row">';
-      
+      let stableRowHTML = '<div class="image-row">';
+      let baselineRowHTML = '<div class="image-row">';
+  
       // Cells for each prompt, including the base image as the first prompt
       [imageId, ...prompts].forEach((prompt, index) => {
-        tableHTML += '<div class="image-cell">';
-        if (index === 0) {
-          // Base image
-          tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
-        } else {
-          // Generated images
-          tableHTML += generateImageCell(imageId, prompt, true); // Assuming you always want stable images
+        let stableCellHTML = '<div class="image-cell">';
+        let baselineCellHTML = '<div class="image-cell">';
+        
+        if (index === 0) { // Base image cell
+          stableCellHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
+          baselineCellHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
+        } else { // Generated image cells
+          stableCellHTML += generateImageCell(imageId, prompt, true); // Stable model images
+          baselineCellHTML += generateImageCell(imageId, prompt, false); // Baseline model images
         }
-        tableHTML += '</div>';
+  
+        stableCellHTML += '</div>';
+        baselineCellHTML += '</div>';
+  
+        stableRowHTML += stableCellHTML;
+        baselineRowHTML += baselineCellHTML;
       });
   
-      tableHTML += '</div>'; // Close image row
+      stableRowHTML += '</div>'; // Close stable image row
+      baselineRowHTML += '</div>'; // Close baseline image row
+  
+      stableTableHTML += stableRowHTML;
+      baselineTableHTML += baselineRowHTML;
     });
   
-    tableHTML += '</div>'; // Close image table
-    document.getElementById('imageTable').innerHTML = tableHTML;
+    stableTableHTML += '</div>'; // Close stable image table
+    baselineTableHTML += '</div>'; // Close baseline image table
+  
+    // Output the tables to the HTML
+    document.getElementById('stableImageTable').innerHTML = stableTableHTML;
+    document.getElementById('baselineImageTable').innerHTML = baselineTableHTML;
   }
-
-// Call buildTable on page load
-window.onload = buildTable;
+  
+  window.onload = buildTable;
+  
