@@ -208,7 +208,7 @@ function buildTable() {
       // Stable model images
       tableHTML += generateImageCell(imageId, prompt, true);
       // Baseline model images
-      tableHTML += generateImageCell(imageId, prompt, false);
+    //   tableHTML += generateImageCell(imageId, prompt, false);
     });
     tableHTML += '</div>';
   });
