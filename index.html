@@ -353,29 +353,38 @@
         <script src="script.js"></script>
         <style>
             .image-table {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
+            width: 100%;
             }
-            .image-column {
-              margin: 10px;
-              border: 1px solid #ccc;
-              padding: 10px;
+
+            .image-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             }
+
+            .image-row.header .prompt-title {
+            font-weight: bold;
+            text-align: center;
+            flex: 1;
+            }
+
+            .base-image-cell, .image-cell {
+            margin: 10px;
+            flex: 1; /* This will give equal width to each cell */
+            }
+
             .image-cell img {
-              width: 100%; /* Adjust as needed */
-              height: auto; /* Adjust as needed */
-              display: block;
-              margin-bottom: 10px;
+            width: 100%; /* This will ensure the image takes the full width of the cell */
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
             }
+
             .scores {
-              text-align: center;
-              font-size: 0.8em; /* Adjust as needed */
+            text-align: center;
+            font-size: 0.8em;
             }
-            .prompt-title {
-              font-weight: bold;
-              text-align: center;
-            }
+
         </style>
 
         <!-- What’s Next Section -->

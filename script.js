@@ -206,25 +206,59 @@ function generateImageCell(imageId, prompt, isStable) {
 }
 
 // Function to build the table
-function buildTable() {
-  let tableHTML = '<div class="image-table">';
+// function buildTable() {
+//   let tableHTML = '<div class="image-table">';
 
-  baseImageIds.forEach(imageId => {
-    tableHTML += '<div class="image-column">';
-    tableHTML += `<div class="prompt-title">Base Image</div>`;
-    tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
+//   baseImageIds.forEach(imageId => {
+//     tableHTML += '<div class="image-column">';
+//     tableHTML += `<div class="prompt-title">Base Image</div>`;
+//     tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
+//     prompts.forEach(prompt => {
+//       // Stable model images
+//       tableHTML += generateImageCell(imageId, prompt, true);
+//       // Baseline model images
+//     //   tableHTML += generateImageCell(imageId, prompt, false);
+//     });
+//     tableHTML += '</div>';
+//   });
+
+//   tableHTML += '</div>';
+//   document.getElementById('imageTable').innerHTML = tableHTML;
+// }
+
+function buildTable() {
+    let tableHTML = '<div class="image-table">';
+  
+    // Header row for prompts
+    tableHTML += '<div class="image-row header">';
+    tableHTML += '<div class="prompt-title">Base Image</div>'; // Empty cell for base image
     prompts.forEach(prompt => {
-      // Stable model images
-      tableHTML += generateImageCell(imageId, prompt, true);
-      // Baseline model images
-    //   tableHTML += generateImageCell(imageId, prompt, false);
+      tableHTML += `<div class="prompt-title">${prompt}</div>`;
     });
     tableHTML += '</div>';
-  });
-
-  tableHTML += '</div>';
-  document.getElementById('imageTable').innerHTML = tableHTML;
-}
+  
+    // Rows for images
+    baseImageIds.forEach(imageId => {
+      tableHTML += '<div class="image-row">';
+      
+      // Cell for base image
+      tableHTML += '<div class="base-image-cell">';
+      tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
+      tableHTML += '</div>';
+      
+      // Cells for each prompt
+      prompts.forEach(prompt => {
+        tableHTML += '<div class="image-cell">';
+        tableHTML += generateImageCell(imageId, prompt, true); // Assuming you always want stable images
+        tableHTML += '</div>';
+      });
+  
+      tableHTML += '</div>'; // Close image row
+    });
+  
+    tableHTML += '</div>'; // Close image table
+    document.getElementById('imageTable').innerHTML = tableHTML;
+  }
 
 // Call buildTable on page load
 window.onload = buildTable;
