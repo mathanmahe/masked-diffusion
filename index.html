@@ -232,7 +232,7 @@
         <h2>Experiments</h2>
         <div class="related-works">
         <p>For our experiments, we conducted text-to-image synthesis using both a baseline stable diffusion model and our masked model, with the aim of generating visually coherent images from textual prompts. We utilized the <b>Common Objects in Context (COCO) dataset</b> to create our database of reference images. The baseline model was configured with hyperparameters optimized for stability and quality, including a configuration scale of 8, a sampler of "ddpm," 50 inference steps, a seed value of 42, and a diffusion strength of 0.9. Among 50 timestamps, we selected the 5th, 10th and 15th timestamp for dynamic mask calculation and superimposed it over the predicted latent vector for those selected timestamps. 
-            Dynamic map calculation was performed by calculating the attention scores for each word in the prompt and then normalizing the scores to obtain the mask. The threshold for the mask was set to 0.0002 and the regions with attention scores above the threshold were masked. In short we identify the less attended regions in the image and replace them with the orginal image to preserve the context.
+            Dynamic map calculation was performed by calculating the attention scores for each word in the prompt and then normalizing the scores to obtain the mask. The threshold for the mask was set to  <b>mean of the cumulative map</b> (earlier 0.0002 for older results) and the regions with attention scores above the threshold were masked. In short we identify the less attended regions in the image and replace them with the orginal image to preserve the context.
             We evaluated our models across various prompts, ranging from simple descriptions like "Dog Sitting" to more complex scenarios such as "A Lion with Sunglasses." Each experiment involved synthesizing images based on the prompt using both the baseline model and our masked model. Additionally, we utilized an image of a "Dog Sitting in Grass" as a reference image to provide context for the synthesis process. 
             In our results, we observed the effectiveness of our masked model in preserving context and blending images compared to the baseline model. The structured integration of dynamic masking techniques with diffusion models allowed for enhanced accuracy in drawing subjects from input text onto images, ensuring seamless blending with the original image's visual features and background. Through meticulous experimentation and optimization, we aimed to validate the effectiveness of our approach in improving sample quality and providing greater user control in the generation process.
             Example of one qualitative result is shown below.
@@ -360,6 +360,21 @@
                 <td>April 20, 2024</td>
             </tr>
         </table> -->
+        
+        <h2 style="margin-top: 20px;">Challenges Faced</h2>
+        <div class="related-works">
+            <p style="text-align: justify; margin-bottom: 20px;">Throughout the development and experimentation phase, we encountered several challenges that influenced the refinement of our approach. Below are the key challenges we faced:</p>
+            <ol>
+                <li><strong>Handling Multiple Subjects:</strong> When dealing with prompts involving multiple subjects, such as "A dog and a cat playing," the results were often affected by the overlap of masks. Integrating multiple subjects seamlessly into the image generation process remains an ongoing challenge.</li>
+                <li><strong>Threshold Determination:</strong> Setting the threshold for the dynamic mask proved to be challenging and required extensive ablation studies. Finding the optimal threshold that balances preserving context while avoiding over-masking or under-masking regions remains a nuanced task.</li>
+                <li><strong>Computational Complexity:</strong> The model's computational complexity posed challenges, particularly during the denoising process for each timestamp. Each denoising step requires significant computational resources, leading to slower image generation times.</li>
+                <li><strong>Evaluation Overhead:</strong> Conducting thorough evaluations on the generated images posed logistical challenges. Generating multiple images for different prompts and reference images is a time-consuming process, making comprehensive evaluation a resource-intensive task.</li>
+            </ol>
+            <br/>
+            <p style="text-align: justify;">Addressing these challenges will be crucial for further refining our approach and making it more practical for real-world applications. Strategies such as optimizing computational efficiency, refining masking techniques for multiple subjects, and streamlining the evaluation process will be key areas of focus for future research and development efforts.</p>
+        </div>
+
+
 
         <!-- Team Contributions Section -->
         <div class="team-contributions">
