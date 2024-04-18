@@ -382,96 +382,75 @@ function generateImageCell(imageId, prompt, isStable) {
 
 
 
-// function buildTable() {
-//     let tableHTML = '<div class="image-table">';
-
-//     // Header row for prompts
-//     tableHTML += '<div class="image-row header">';
-//     prompts.forEach(prompt => { // Include the base image as one of the headers
-//       tableHTML += `<div class="prompt-title">${prompt}</div>`;
-//     });
-//     tableHTML += '</div>';
-  
-//     // Rows for images
-//     baseImageIds.forEach(imageId => {
-//       tableHTML += '<div class="image-row">';
-      
-//       // Cells for each prompt, including the base image as the first prompt
-//       [imageId, ...prompts].forEach((prompt, index) => {
-//         tableHTML += '<div class="image-cell">';
-//         if (index === 0) {
-//           // Base image
-//           tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
-//         } else {
-//           // Generated images
-//           tableHTML += generateImageCell(imageId, prompt, true); // Assuming you always want stable images
-//         }
-//         tableHTML += '</div>';
-//       });
-  
-//       tableHTML += '</div>'; // Close image row
-//     });
-  
-//     tableHTML += '</div>'; // Close image table
-//     document.getElementById('imageTable').innerHTML = tableHTML;
-//   }
-
-// // Call buildTable on page load
-// window.onload = buildTable;
-
 function buildTable() {
-    let stableTableHTML = '<div class="image-table">';
-    let baselineTableHTML = '<div class="image-table">';
-  
+
+    // stable diffusion table
+    let tableHTML = '<div class="image-table">';
+
     // Header row for prompts
-    const headerRowHTML = '<div class="image-row header">' +
-      '<div class="prompt-title">Base Image</div>' +
-      prompts.map(prompt => `<div class="prompt-title">${prompt}</div>`).join('') +
-      '</div>';
-  
-    // Add the header row to both stable and baseline tables
-    stableTableHTML += headerRowHTML;
-    baselineTableHTML += headerRowHTML;
+    tableHTML += '<div class="image-row header">';
+    prompts.forEach(prompt => { // Include the base image as one of the headers
+      tableHTML += `<div class="prompt-title">${prompt}</div>`;
+    });
+    tableHTML += '</div>';
   
     // Rows for images
     baseImageIds.forEach(imageId => {
-      let stableRowHTML = '<div class="image-row">';
-      let baselineRowHTML = '<div class="image-row">';
-  
+      tableHTML += '<div class="image-row">';
+      
       // Cells for each prompt, including the base image as the first prompt
       [imageId, ...prompts].forEach((prompt, index) => {
-        let stableCellHTML = '<div class="image-cell">';
-        let baselineCellHTML = '<div class="image-cell">';
-        
-        if (index === 0) { // Base image cell
-          stableCellHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
-          baselineCellHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
-        } else { // Generated image cells
-          stableCellHTML += generateImageCell(imageId, prompt, true); // Stable model images
-          baselineCellHTML += generateImageCell(imageId, prompt, false); // Baseline model images
+        tableHTML += '<div class="image-cell">';
+        if (index === 0) {
+          // Base image
+          tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
+        } else {
+          // Generated images
+          tableHTML += generateImageCell(imageId, prompt, true); // Assuming you always want stable images
         }
-  
-        stableCellHTML += '</div>';
-        baselineCellHTML += '</div>';
-  
-        stableRowHTML += stableCellHTML;
-        baselineRowHTML += baselineCellHTML;
+        tableHTML += '</div>';
       });
   
-      stableRowHTML += '</div>'; // Close stable image row
-      baselineRowHTML += '</div>'; // Close baseline image row
-  
-      stableTableHTML += stableRowHTML;
-      baselineTableHTML += baselineRowHTML;
+      tableHTML += '</div>'; // Close image row
     });
   
-    stableTableHTML += '</div>'; // Close stable image table
-    baselineTableHTML += '</div>'; // Close baseline image table
+    tableHTML += '</div>'; // Close image table
+    document.getElementById('imageTable').innerHTML = tableHTML;
+
+    // our baseline
+    let baselinetableHTML = '<div class="image-table">';
+
+    // Header row for prompts
+    baselinetableHTML += '<div class="image-row header">';
+    prompts.forEach(prompt => { // Include the base image as one of the headers
+        baselinetableHTML += `<div class="prompt-title">${prompt}</div>`;
+    });
+    baselinetableHTML += '</div>';
   
-    // Output the tables to the HTML
-    document.getElementById('stableImageTable').innerHTML = stableTableHTML;
-    document.getElementById('baselineImageTable').innerHTML = baselineTableHTML;
+    // Rows for images
+    baseImageIds.forEach(imageId => {
+        baselinetableHTML += '<div class="image-row">';
+      
+      // Cells for each prompt, including the base image as the first prompt
+      [imageId, ...prompts].forEach((prompt, index) => {
+        baselinetableHTML += '<div class="image-cell">';
+        if (index === 0) {
+          // Base image
+          baselinetableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
+        } else {
+          // Generated images
+          baselinetableHTML += generateImageCell(imageId, prompt, false); // Assuming you always want stable images
+        }
+        baselinetableHTML += '</div>';
+      });
+  
+      baselinetableHTML += '</div>'; // Close image row
+    });
+  
+    baselinetableHTML += '</div>'; // Close image table
+    document.getElementById('baselineImageTable').innerHTML = baselinetableHTML;
   }
-  
-  window.onload = buildTable;
-  
+
+// Call buildTable on page load
+window.onload = buildTable;
+
