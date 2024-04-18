@@ -228,11 +228,10 @@ function generateImageCell(imageId, prompt, isStable) {
 
 function buildTable() {
     let tableHTML = '<div class="image-table">';
-  
+
     // Header row for prompts
     tableHTML += '<div class="image-row header">';
-    tableHTML += '<div class="prompt-title">Base Image</div>'; // Empty cell for base image
-    prompts.forEach(prompt => {
+    prompts.forEach(prompt => { // Include the base image as one of the headers
       tableHTML += `<div class="prompt-title">${prompt}</div>`;
     });
     tableHTML += '</div>';
@@ -241,15 +240,16 @@ function buildTable() {
     baseImageIds.forEach(imageId => {
       tableHTML += '<div class="image-row">';
       
-      // Cell for base image
-      tableHTML += '<div class="base-image-cell">';
-      tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
-      tableHTML += '</div>';
-      
-      // Cells for each prompt
-      prompts.forEach(prompt => {
+      // Cells for each prompt, including the base image as the first prompt
+      [imageId, ...prompts].forEach((prompt, index) => {
         tableHTML += '<div class="image-cell">';
-        tableHTML += generateImageCell(imageId, prompt, true); // Assuming you always want stable images
+        if (index === 0) {
+          // Base image
+          tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
+        } else {
+          // Generated images
+          tableHTML += generateImageCell(imageId, prompt, true); // Assuming you always want stable images
+        }
         tableHTML += '</div>';
       });
   

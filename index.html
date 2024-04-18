@@ -353,37 +353,41 @@
         <script src="script.js"></script>
         <style>
             .image-table {
-            width: 100%;
+            max-width: 100%; /* Limit the width to the width of the screen */
             }
 
             .image-row {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: stretch; /* Align items in a way that they stretch to fill the container */
+            margin-bottom: 20px; /* Adds space between the rows */
             }
 
-            .image-row.header .prompt-title {
-            font-weight: bold;
+            .image-row.header .prompt-title, .image-row .image-cell {
+            flex-grow: 1; /* This will allow each cell to grow equally */
+            flex-basis: 0; /* This prevents the flex items from growing beyond their content size */
             text-align: center;
-            flex: 1;
             }
 
             .base-image-cell, .image-cell {
-            margin: 10px;
-            flex: 1; /* This will give equal width to each cell */
+            padding: 10px; /* Add padding for some spacing around images */
             }
 
             .image-cell img {
             width: 100%; /* This will ensure the image takes the full width of the cell */
             height: auto;
             display: block;
-            margin-bottom: 10px;
             }
 
             .scores {
             text-align: center;
             font-size: 0.8em;
             }
+
+            .prompt-title {
+            font-weight: bold;
+            }
+
 
         </style>
 
