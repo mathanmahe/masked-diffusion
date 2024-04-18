@@ -204,7 +204,7 @@ function buildTable() {
   baseImageIds.forEach(imageId => {
     tableHTML += '<div class="image-column">';
     tableHTML += `<div class="prompt-title">Base Image</div>`;
-    tableHTML += `<img src="${baseImagePath + imageId}.jpg" alt="Base Image">`;
+    tableHTML += `<img src="${baseImagePath + imageId}" alt="Base Image">`;
     prompts.forEach(prompt => {
       // Stable model images
       tableHTML += generateImageCell(imageId, prompt, true);
