@@ -363,21 +363,23 @@ const baselineGenPath = baseImagePath + "generated_images/";
 function generateImageCell(imageId, prompt, isStable) {
     const imagePath = (isStable ? stableGenPath : baselineGenPath) + imageId + "_" + prompt.replace(/ /g, '_') + ".jpg";
     const scores = (isStable ? scoresDictionary[imageId] :scoresDictionary2[imageId][prompt] );
-    console.log(imageId)
-    console.log(imagePath)
-    console.log(scoresDictionary)
-    console.log(scores)
 
+    if (isStable) {
     // Extract the individual scores for the prompt
     const FID = scores.FID[prompt];
     const PSNR = scores.PSNR[prompt];
     const SSIM = scores.SSIM[prompt];
 
     const scoreText = `FID: ${FID.toFixed(2)}<br>PSNR: ${PSNR.toFixed(2)}<br>SSIM: ${SSIM.toFixed(2)}`;
+
+    } else {
+    const scoreText = `FID: ${scores.FID.toFixed(2)}<br>PSNR: ${scores.PSNR.toFixed(2)}<br>SSIM: ${scores.SSIM.toFixed(2)}`;
+
+    }
     return `<div class="image-cell">
-      <img src="${imagePath}" alt="${prompt}" />
-      <div class="scores">${scoreText}</div>
-    </div>`;
+    <img src="${imagePath}" alt="${prompt}" />
+    <div class="scores">${scoreText}</div>
+  </div>`;
 }
 
 
