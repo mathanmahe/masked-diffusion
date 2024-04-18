@@ -192,7 +192,13 @@ function generateImageCell(imageId, prompt, isStable) {
     console.log(imagePath)
     console.log(scoresDictionary)
     console.log(scores)
-    const scoreText = `FID: ${scores.FID.toFixed(2)}<br>PSNR: ${scores.PSNR.toFixed(2)}<br>SSIM: ${scores.SSIM.toFixed(2)}`;
+
+    // Extract the individual scores for the prompt
+    const FID = scores.FID[prompt];
+    const PSNR = scores.PSNR[prompt];
+    const SSIM = scores.SSIM[prompt];
+
+    const scoreText = `FID: ${FID.toFixed(2)}<br>PSNR: ${PSNR.toFixed(2)}<br>SSIM: ${SSIM.toFixed(2)}`;
     return `<div class="image-cell">
       <img src="${imagePath}" alt="${prompt}" />
       <div class="scores">${scoreText}</div>
