@@ -394,6 +394,8 @@ function buildTable() {
 
     // Header row for prompts
     tableHTML += '<div class="image-row header">';
+    tableHTML += '<div class="prompt-title">Reference Image</div>'; // This will be the first column header
+
     prompts.forEach(prompt => { // Include the base image as one of the headers
       tableHTML += `<div class="prompt-title">${prompt}</div>`;
     });
@@ -427,6 +429,8 @@ function buildTable() {
 
     // Header row for prompts
     baselinetableHTML += '<div class="image-row header">';
+    baselinetableHTML += '<div class="prompt-title">Reference Image</div>'; // This will be the first column header
+
     prompts.forEach(prompt => { // Include the base image as one of the headers
         baselinetableHTML += `<div class="prompt-title">${prompt}</div>`;
     });
