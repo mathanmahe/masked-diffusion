@@ -362,7 +362,7 @@ const baselineGenPath = baseImagePath + "generated_images/";
 // Function to generate image cell HTML
 function generateImageCell(imageId, prompt, isStable) {
     const imagePath = (isStable ? stableGenPath : baselineGenPath) + imageId + "_" + prompt.replace(/ /g, '_') + ".jpg";
-    const scores = (isStable ? scoresDictionary[imageId] :scoresDictionary2[imageId] );
+    const scores = (isStable ? scoresDictionary[imageId] :scoresDictionary2[imageId][prompt] );
     console.log(imageId)
     console.log(imagePath)
     console.log(scoresDictionary)
